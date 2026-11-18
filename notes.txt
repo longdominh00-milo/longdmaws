@@ -1,0 +1,10 @@
+Day1 - Cloud Operations Lab
+
+Day 1 - Monitoring and Troubleshooting
+- Used grep and find to investigate application logs.
+- Practiced top, vm_stat, sysctl vm.swapusage, and df -h on macOS.
+- Low free RAM does not automatically mean severe memory pressure.
+- Swap usage is a current value; swapins/swapouts are cumulative counters.
+- Compare metrics over time and correlate with application performance.
+- Troubleshooting workflow: Observe -> Correlate -> Investigate -> Act -> Verify.
+- Never restart or resize a server based on one metric alone.
