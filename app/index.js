@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
       <title>Application Demo</title>
     </head>
     <body style='background-color: ${bgColor}; color: wheat;text-align: center;'>
-      <h1 style='color: orange'>Hello from AWS - Welcome to AWS path learning</h1>
+      <h1 style='color: orange'>Hello from AWS - Welcome to LongDM AWS path learning</h1>
       <h3>Container name: <span style='color: pink'>${containerName}</span></h3>
       <h3>Container's IP Address: <span style='color: pink'>${ip}</span></h3>
       <h3>Application Version: <span style='color: coral'>V${version}</span></h3>
