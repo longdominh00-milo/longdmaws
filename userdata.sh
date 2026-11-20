@@ -9,8 +9,8 @@ dnf install -y nodejs22 git
 
 # Clone application
 cd /home/ec2-user
-git clone -b lab14-cicd https://github.com/vietaws/architecting.git
-cd architecting/app
+git clone -b lab14-cicd https://github.com/longdominh00-milo/longdmaws.git
+cd longdmaws/app
 # mv -f index-base.js index.js
 
 # Create .env file (update DB_HOST with your database endpoint)
@@ -22,20 +22,20 @@ EOF
 npm install
 
 # Set permissions
-chown -R ec2-user:ec2-user /home/ec2-user/architecting
+chown -R ec2-user:ec2-user /home/ec2-user/longdmaws
 
 # Create systemd service
 cat > /etc/systemd/system/demo-app.service <<'EOFS'
 [Unit]
-Description=AWS Architecting Demo Application - Viet Tran
+Description=AWS Architecting Demo Application - LongDM
 After=network.target
 
 [Service]
 Type=simple
 User=ec2-user
-WorkingDirectory=/home/ec2-user/architecting
-EnvironmentFile=/home/ec2-user/architecting/.env
-ExecStart=/usr/bin/node server.js
+WorkingDirectory=/home/ec2-user/longdmaws/app
+EnvironmentFile=/home/ec2-user/longdmaws/app/.env
+ExecStart=/usr/bin/node index.js
 Restart=always
 RestartSec=10
 StandardOutput=journal
@@ -45,6 +45,15 @@ SyslogIdentifier=demo-app
 [Install]
 WantedBy=multi-user.target
 EOFS
+
+# Install CodeDeploy agent
+dnf install -y ruby wget nodejs22 npm git
+cd /tmp
+wget https://aws-codedeploy-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/install
+chmod +x ./install
+./install auto
+systemctl enable codedeploy-agent
+systemctl start codedeploy-agent
 
 # Start service
 systemctl daemon-reload
