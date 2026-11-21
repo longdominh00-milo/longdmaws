@@ -49,7 +49,7 @@ EOFS
 # Install CodeDeploy agent
 dnf install -y ruby wget nodejs22 npm git
 cd /tmp
-wget https://aws-codedeploy-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/install
+wget https://aws-codedeploy-ap-southeast-2.s3.ap-southeast-2.amazonaws.com/latest/install
 chmod +x ./install
 ./install auto
 systemctl enable codedeploy-agent
