@@ -11,7 +11,7 @@
   },
   "containerDefinitions": [
     {
-      "name": "example",
+      "name": "demo-01",
       "image": "<IMAGE1_NAME>",
       "portMappings": [
         {
