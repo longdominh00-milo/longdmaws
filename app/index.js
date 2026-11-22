@@ -15,7 +15,7 @@ app.use(
 );
 
 const BACKGROUND_COLOR = process.env.BACKGROUND_COLOR || "#283E5B";
-const APP_PORT = process.env.PORT || 3001;
+const APP_PORT = process.env.PORT || 3002;
 
 app.get("/", async (req, res) => {
   try {
@@ -24,7 +24,7 @@ app.get("/", async (req, res) => {
     const containerName = os.hostname();
     console.log("os hostname: ", os.hostname());
     const ip = containerIp.split(":")[3];
-    const version = 3.1;
+    const version = 6;
     const bgColor = BACKGROUND_COLOR;
     const html = `
     <html>
@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
       <title>Application Demo</title>
     </head>
     <body style='background-color: ${bgColor}; color: wheat;text-align: center;'>
-      <h1 style='color: orange'>Hello from AWS - Welcome to LongDM AWS path learning</h1>
+      <h1 style='color: orange'>Welcome to AWS</h1>
       <h3>Container name: <span style='color: pink'>${containerName}</span></h3>
       <h3>Container's IP Address: <span style='color: pink'>${ip}</span></h3>
       <h3>Application Version: <span style='color: coral'>V${version}</span></h3>
