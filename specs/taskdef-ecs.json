@@ -1,5 +1,5 @@
 {
-  "family": "lab14-td",
+  "family": "lab14-cicd-td",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
