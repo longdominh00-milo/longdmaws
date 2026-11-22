@@ -33,7 +33,8 @@ phases:
       - echo Build completed. Image URI
       - echo $IMAGE_URI
       # - printf '{"ImageURI":"%s"}' $IMAGE_URI > imageDetail.json
-      # - cat imageDetail.json
+      - printf '{"name":"%s","imageUri":"%s"}' $CONTAINER_NAME $IMAGE_URI > imageDetail.json
+      - cat imageDetail.json
       # - pwd
       # - ls -la
       # - echo Moving imageDetail.json to $CODEBUILD_SRC_DIR for CodePipeline...
@@ -42,8 +43,8 @@ phases:
       # - mv ../specs/appspec-ecs.yaml $CODEBUILD_SRC_DIR/appspec.yml
       # - mv ../specs/taskdef-ecs.json $CODEBUILD_SRC_DIR/taskdef.json
       # - ls -la $CODEBUILD_SRC_DIR
-# artifacts:
-#   files: 
-#    - imageDetail.json
+artifacts:
+  files: 
+   - imageDetail.json
 #    - appspec.yml
 #    - taskdef.json
