@@ -15,7 +15,7 @@ app.use(
 );
 
 const BACKGROUND_COLOR = process.env.BACKGROUND_COLOR || "#283E5B";
-const APP_PORT = process.env.PORT || 3002;
+const APP_PORT = process.env.PORT || 3001;
 
 app.get("/", async (req, res) => {
   try {
