@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: arn:aws:ecs:ap-southeast-2:848989864871:task-definition/lab14-cicd-td:3
+        TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
           ContainerName: "demo-01" # must match container name in task definition 
           ContainerPort: 3001
